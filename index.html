@@ -3,51 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diversity, LGBTQ+ & Human Rights Education</title>
+    <title>EduDiversity - Diversity & Human Rights Education</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'bg,cs,da,de,el,en,es,et,fi,fr,ga,hr,hu,it,lt,lv,mt,nl,pl,pt,ro,sk,sl,sv,uk,sq,bs,mk,sr',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
         <div class="logo">EduDiversity</div>
-        
-        <!-- Language Selector Widget -->
         <div class="language-selector">
-            <span class="lang-label">Language:</span>
+            <span>Language:</span>
             <div id="google_translate_element"></div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Empowering Through Knowledge</h1>
-            <p>An educational platform on LGBTQ+ pride flags, gender identity, skin tone diversity, anti-racism, and language rights.</p>
-        </div>
+        <h1>Empowering Through Knowledge</h1>
+        <p>An educational platform on LGBTQ+ pride flags, gender identity, skin tone diversity, anti-racism, and language rights.</p>
     </section>
 
-    <!-- Tab Container System (Pure HTML & CSS) -->
+    <!-- TAB SYSTEM CONTAINER -->
     <div class="tab-system">
-        <!-- Radio Buttons controlling tabs -->
-        <input type="radio" id="tab1" name="tabs" checked>
-        <input type="radio" id="tab2" name="tabs">
-        <input type="radio" id="tab3" name="tabs">
-        <input type="radio" id="tab4" name="tabs">
+        <!-- Radio inputs MUST be direct children of .tab-system before .tab-nav and .container -->
+        <input type="radio" name="tabs" id="tab1" checked>
+        <input type="radio" name="tabs" id="tab2">
+        <input type="radio" name="tabs" id="tab3">
+        <input type="radio" name="tabs" id="tab4">
 
-        <!-- Tab Navigation Bar -->
         <nav class="tab-nav">
             <label for="tab1" class="tab-btn">LGBTQ+ & Pride Flags</label>
             <label for="tab2" class="tab-btn">Gender Identity</label>
@@ -56,149 +40,114 @@
         </nav>
 
         <main class="container">
-
-            <!-- TAB 1: LGBTQ+ & Flags Section -->
+            <!-- TAB 1: LGBTQ+ & PRIDE FLAGS -->
             <section class="tab-content content-1">
-                <h2>LGBTQ+ & Flag Meanings</h2>
-                <p class="section-intro">Pride flags are symbols of identity, community, visibility, and historical resistance:</p>
-
+                <p class="section-intro">Pride flags are powerful symbols of community, identity, and ongoing struggles for equal human rights worldwide.</p>
                 <div class="grid">
                     <div class="card">
                         <div class="flag-preview progress-flag"></div>
                         <h3>Progress Pride Flag</h3>
-                        <p>Designed by Daniel Quasar in 2018. The arrow includes trans pride colors and black/brown stripes to represent marginalized LGBTQ+ people of color and those living with HIV/AIDS.</p>
+                        <p>Designed by Daniel Quasar in 2018, this flag incorporates five arrow-shaped stripes to place greater emphasis on inclusion and progress. The brown and black stripes represent marginalized LGBTQ+ people of color, community members lost to HIV/AIDS, and the stigma surrounding it. The light blue, pink, and white stripes represent the Transgender Pride Flag.</p>
                     </div>
 
                     <div class="card">
                         <div class="flag-preview nb-flag"></div>
                         <h3>Non-Binary Flag</h3>
-                        <p>Created by Kye Rowan in 2014. Yellow represents gender outside the binary, white represents all genders, purple represents a mix of male and female, and black represents agender identities.</p>
+                        <p>Created by Kye Rowan in 2014 for non-binary individuals who do not feel the genderqueer flag represents them. Yellow represents people whose gender exists outside the binary; white represents people with many or all genders; purple represents those whose gender is a fluid mix of male and female; black represents agender or genderless individuals.</p>
                     </div>
 
                     <div class="card">
                         <div class="flag-preview trans-flag"></div>
                         <h3>Transgender Flag</h3>
-                        <p>Created by Monica Helms in 1999. Blue represents traditional male, pink represents traditional female, and white represents transitioning or non-binary individuals.</p>
+                        <p>Designed by Monica Helms in 1999, an open transgender woman. Light blue represents the traditional color for baby boys, pink for baby girls, and white in the center represents those who are transitioning, intersex, or possess a neutral/undefined gender. Helms noted that no matter which way you fly it, it is always correct.</p>
                     </div>
 
                     <div class="card">
                         <div class="flag-preview bi-flag"></div>
                         <h3>Bisexual Flag</h3>
-                        <p>Designed by Michael Page in 1998. Pink represents attraction to the same gender, blue to a different gender, and purple to more than one gender.</p>
+                        <p>Designed by Michael Page in 1998 to give the bisexual community its own symbol, comparable to the rainbow flag. The top magenta stripe represents attraction to the same gender; the bottom deep blue stripe represents attraction to different genders; the blended purple stripe in the middle represents attraction across the gender spectrum.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- TAB 2: Gender Identity Section -->
+            <!-- TAB 2: GENDER IDENTITY -->
             <section class="tab-content content-2">
-                <h2>Understanding Gender Identities</h2>
-                <p class="section-intro">Gender identity is a person's deeply felt internal sense of gender, which may or may not correspond to their sex assigned at birth.</p>
-
+                <p class="section-intro">Gender identity is a fundamental aspect of human self-determination, distinct from biological sex characteristics or sexual orientation.</p>
                 <div class="grid">
                     <div class="card">
-                        <h3>Cisgender</h3>
-                        <p>Describes individuals whose internal gender identity aligns with the sex assigned to them at birth.</p>
+                        <h3>Understanding Gender Identity</h3>
+                        <p>Gender identity refers to each person's deeply felt internal and individual experience of gender, which may or may not correspond with the sex assigned to them at birth. It encompasses personal perception of the body and other expressions including dress, speech, and mannerisms.</p>
                     </div>
 
                     <div class="card">
-                        <h3>Transgender</h3>
-                        <p>An umbrella term for people whose gender identity differs from the sex assigned to them at birth.</p>
+                        <h3>Cisgender & Transgender</h3>
+                        <p><strong>Cisgender:</strong> Individuals whose gender identity aligns with the sex assigned to them at birth.<br><strong>Transgender:</strong> An umbrella term for people whose gender identity or expression differs from societal expectations associated with the sex assigned at birth.</p>
                     </div>
 
                     <div class="card">
-                        <h3>Non-Binary & Genderqueer</h3>
-                        <p>Terms used by people whose gender identity falls outside the strict male-female binary system.</p>
+                        <h3>Non-Binary & Agender</h3>
+                        <p><strong>Non-Binary:</strong> Terms used to describe identities that fall outside the traditional gender binary of strictly male or female.<br><strong>Agender:</strong> Identifying as having no gender or being gender-neutral.</p>
                     </div>
 
                     <div class="card">
-                        <h3>Agender</h3>
-                        <p>Refers to people who identify as having no gender or feeling gender-neutral.</p>
+                        <h3>Pronouns & Respect</h3>
+                        <p>Using correct pronouns (such as he/him, she/her, they/them, or neopronouns) is a basic form of human respect and validation of an individual's identity. Misgendering can cause severe social dysphoria and psychological stress.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- TAB 3: Skin Color, Racism & Apartheid Section -->
+            <!-- TAB 3: SKIN COLOR, RACISM & APARTHEID -->
             <section class="tab-content content-3">
-                <h2>Skin Color, Anti-Racism & Deconstructing Apartheid</h2>
-                <p class="section-intro">Human skin color diversity is a natural biological adaptation to UV radiation. Racism is a social construct used to enforce power hierarchies.</p>
-
+                <p class="section-intro">Understanding structural racism, historical segregation, and skin tone representation is essential for building an equitable society.</p>
                 <div class="grid">
+                    <div class="card">
+                        <h3>Human Rights & Anti-Racism</h3>
+                        <p>Article 1 of the Universal Declaration of Human Rights states that all human beings are born free and equal in dignity and rights. Anti-racism requires active practices and institutional reforms to challenge systemic oppression based on skin tone or ethnicity.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>The History of Apartheid</h3>
+                        <p>Apartheid was a institutionalized system of racial segregation and discrimination enforced by the National Party government in South Africa from 1948 to 1994. Under apartheid, rights, associations, and residency were strictly enforced based on racial classification.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Skin Tone Diversity & Representation</h3>
+                        <p>Colorism and prejudice based on skin shade persist globally. Recognizing and celebrating full skin tone spectrums in education, media, medical diagnostics, and digital tools (like emoji palettes) is vital for combating bias.</p>
+                    </div>
+
                     <div class="card full-width">
-                        <h3>Apartheid: A Political Euphemism for Racism</h3>
-                        <p>
-                            The term <strong>Apartheid</strong> originates from Afrikaans and literally translates to <em>"apart-ness"</em> or <em>"separateness"</em>. 
-                            In reality, "Apartheid" was a policy-driven <strong>euphemism designed to sanitize systemic racism and racial segregation</strong>.
-                        </p>
-                        <p>
-                            By framing oppressive laws as mere "separate development" or administrative management, the ruling white minority regime in South Africa attempted to normalize racial oppression, mass displacement, disenfranchisement, and state violence against Black and Brown communities. Calling it "apartness" served as a linguistic cloak to hide state-sponsored racism and white supremacy under the guise of order and division.
-                        </p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Biological Human Spectrum</h3>
-                        <p>Skin melanin concentration evolved across geography purely as protection against ultraviolet radiation. Science confirms that biological race does not exist in human genetics; racial categorizations were artificially created during colonial periods to justify slavery and exploitation.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Colorism</h3>
-                        <p>Prejudice or discrimination against individuals with darker skin tones, often occurring both between different racial groups and within the same community. Unlearning colorism is essential for true solidarity.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Systemic & Institutional Racism</h3>
-                        <p>Racism is not merely individual prejudice or racial slurs. Systemic racism refers to embedded organizational policies, legal systems, and societal structures that continuously privilege white groups while disadvantaging racial minorities in housing, healthcare, education, and justice.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Intersectionality</h3>
-                        <p>Coined by legal scholar Kimberlé Crenshaw, intersectionality explains how different forms of oppression (racism, sexism, homophobia, transphobia, classism) intersect and amplify each other, creating unique lived experiences of discrimination.</p>
+                        <h3>Systemic vs. Individual Racism</h3>
+                        <p>While individual racism manifests through interpersonal prejudice and slurs, systemic (or institutional) racism refers to policies and practices embedded in housing, criminal justice, employment, and education that produce inequitable outcomes across racial groups.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- TAB 4: Gender-Inclusive Language & State Bans Section -->
+            <!-- TAB 4: GENDER-INCLUSIVE LANGUAGE & STATE BANS -->
             <section class="tab-content content-4">
-                <h2>Gender-Inclusive Language & State Language Bans</h2>
-                <p class="section-intro">Language shapes how we perceive reality. Gender-inclusive language aims to reflect all human identities in public discourse.</p>
-
+                <p class="section-intro">An overview of global and regional developments regarding gender-inclusive language, official policies, and legal restrictions.</p>
                 <div class="grid">
+                    <div class="card">
+                        <h3>Gender-Inclusive Language</h3>
+                        <p>Gender-inclusive language aims to avoid bias, slang, or discriminatory assumptions toward particular sexes or genders. In German, methods like the asterisk (Gendersternchen), colon, or gender-neutral phrasing (e.g., "Studierende" instead of "Studenten") are used to explicitly include all gender identities.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Legal Rights & Self-Determination</h3>
+                        <p>In many modern democracies, legal frameworks (such as Germany's Self-Determination Act / Selbstbestimmungsgesetz) allow individuals to update their legal name and gender marker through direct administration without administrative barriers or medical pathologization.</p>
+                    </div>
+
                     <div class="card full-width danger-highlight">
-                        <h3>Banning Gender-Inclusive Language: State Discrimination & Human Rights Violations</h3>
-                        <p>
-                            In regions like Bavaria (Bavarian Gender Ban), state authorities enforced official bans prohibiting schools, universities, and public authorities from using gender-sensitive punctuation (such as the gender star, colon, or internal 'I').
-                        </p>
-                        <p>
-                            Politically enforcing language bans is a form of <strong>institutionalized discrimination</strong> and a violation of personal freedom. 
-                            The right to express one's identity and refer to all gender identities respectfully is protected under the <strong>General Right of Personality (Allgemeines Persönlichkeitsrecht)</strong>, a core pillar of human rights and constitutional freedom.
-                        </p>
-                        <p>
-                            By outlawing inclusive language, state governments actively erase women, non-binary, and transgender people from official visibility. Banning language under the guise of "linguistic purity" restricts freedom of expression and weaponizes state power to marginalize vulnerable identity groups.
-                        </p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Why Gender-Inclusive Language Matters</h3>
-                        <p>Traditional masculine forms ("generic masculine") often lead to the subconscious mental erasure of women and non-binary individuals. Inclusive language ensures that everyone in society is addressed and represented equally.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Personality Rights & Self-Determination</h3>
-                        <p>How an individual speaks, self-identifies, and acknowledges others is intimately linked to personal dignity. State control over how people address each other threatens basic democratic values and individual self-determination.</p>
+                        <h3>Official Bans & Restrictions</h3>
+                        <p>Several state governments and public bodies have enacted restrictions or explicit bans on using gender-inclusive punctuation marks in official administration, schools, and universities. Proponents argue these measures uphold standard orthography, while human rights advocates point out that restrictions erase visibility for non-binary and transgender individuals in official communication.</p>
                     </div>
                 </div>
             </section>
-
         </main>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Diversity Education Project.</p>
-            <p class="disclaimer">
-                I decided to build this educational website myself because the federal government and Friedrich Merz failed to properly fund and support the Federal Agency for Civic Education (bpb).
-            </p>
-        </div>
+        <p>&copy; 2026 EduDiversity. All rights reserved.</p>
+        <p class="disclaimer">This educational platform promotes knowledge on human rights, anti-racism, and gender diversity. Content is designed for informative and educational purposes.</p>
     </footer>
 
 </body>
