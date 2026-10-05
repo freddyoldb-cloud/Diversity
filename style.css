@@ -66,11 +66,7 @@ header .logo {
     opacity: 0.95;
 }
 
-/* --- Pure CSS Tab Control System --- */
-.tab-system > input[type="radio"] {
-    display: none !important;
-}
-
+/* --- Tab Navigation --- */
 .tab-nav {
     display: flex;
     justify-content: center;
@@ -82,6 +78,8 @@ header .logo {
 }
 
 .tab-btn {
+    background: none;
+    border: none;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     font-weight: 600;
@@ -89,33 +87,24 @@ header .logo {
     cursor: pointer;
     border-bottom: 3px solid transparent;
     transition: all 0.3s ease;
-    user-select: none;
 }
 
 .tab-btn:hover {
     color: var(--primary-color);
 }
 
-/* Active Tab Button Highlighting */
-#tab1:checked ~ .tab-nav label[for="tab1"],
-#tab2:checked ~ .tab-nav label[for="tab2"],
-#tab3:checked ~ .tab-nav label[for="tab3"],
-#tab4:checked ~ .tab-nav label[for="tab4"] {
+.tab-btn.active {
     color: var(--primary-color);
     border-bottom: 3px solid var(--primary-color);
 }
 
-/* Hide all tab contents by default */
+/* --- Tab Content Visibility --- */
 .tab-content {
-    display: none !important;
+    display: none;
 }
 
-/* Show content corresponding to checked tab */
-#tab1:checked ~ .container .content-1,
-#tab2:checked ~ .container .content-2,
-#tab3:checked ~ .container .content-3,
-#tab4:checked ~ .container .content-4 {
-    display: block !important;
+.tab-content.active {
+    display: block;
     animation: fadeIn 0.4s ease;
 }
 
