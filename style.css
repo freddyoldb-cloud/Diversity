@@ -67,8 +67,9 @@ header .logo {
 }
 
 /* --- Pure CSS Tab Control System --- */
-.tab-system input[type="radio"] {
-    display: none;
+/* Direct descendant selector to hide radio buttons completely */
+.tab-system > input[type="radio"] {
+    display: none !important;
 }
 
 .tab-nav {
@@ -105,12 +106,12 @@ header .logo {
     border-bottom: 3px solid var(--primary-color);
 }
 
-/* Tab Content Visibility Fix */
+/* Hide all tab contents by default */
 .tab-content {
     display: none !important;
 }
 
-/* Korrekte Einblendung der jeweiligen Tab-Inhalte */
+/* Show content corresponding to checked tab */
 #tab1:checked ~ .container .content-1,
 #tab2:checked ~ .container .content-2,
 #tab3:checked ~ .container .content-3,
