@@ -1,5 +1,6 @@
 :root {
     --primary-color: #4a90e2;
+    --primary-dark: #357abd;
     --dark-bg: #1e1e24;
     --card-bg: #ffffff;
     --text-color: #333333;
@@ -22,7 +23,7 @@ body {
 
 header {
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,84 +35,100 @@ header {
 
 header .logo {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--primary-color);
 }
 
-nav ul {
+.language-selector {
     display: flex;
-    list-style: none;
-    gap: 1.5rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: #555;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: var(--primary-color);
 }
 
 .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
 }
 
 .hero p {
     font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0.95;
 }
 
-.btn {
-    display: inline-block;
-    background: white;
-    color: #764ba2;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 20px;
-    transition: background 0.3s;
+/* Tab Navigation Bar */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem 0;
+    flex-wrap: wrap;
 }
 
-.btn:hover {
-    background: #f0f0f0;
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .container {
     max-width: 1100px;
     margin: 2rem auto;
     padding: 0 1rem;
+    min-height: 50vh;
 }
 
-.card-section {
-    margin-bottom: 3rem;
+/* Tab Content Visibility */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
 }
 
-.card-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    color: #222;
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .section-intro {
     margin-bottom: 1.5rem;
-    color: #666;
+    color: #555;
+    font-size: 1.05rem;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
@@ -122,11 +139,31 @@ nav a:hover {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.card h3 {
-    margin-bottom: 0.5rem;
+.card.full-width {
+    grid-column: 1 / -1;
+    background: #fdf6e3;
+    border-left: 5px solid #d33682;
 }
 
-/* Flag Previews (CSS Gradients) */
+.card.full-width.danger-highlight {
+    background: #fff0f0;
+    border-left: 5px solid #e53e3e;
+}
+
+.card h3 {
+    margin-bottom: 0.6rem;
+    color: #222;
+}
+
+.card p {
+    margin-bottom: 0.8rem;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Flag Previews */
 .flag-preview {
     height: 120px;
     border-radius: 4px;
@@ -154,7 +191,7 @@ nav a:hover {
 .accordion {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
 .accordion-item {
@@ -167,19 +204,20 @@ nav a:hover {
 .accordion-header {
     width: 100%;
     text-align: left;
-    padding: 1rem;
+    padding: 1rem 1.2rem;
     background: none;
     border: none;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .accordion-header::after {
     content: '+';
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .accordion-item.active .accordion-header::after {
@@ -189,13 +227,13 @@ nav a:hover {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0 1rem;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.2rem;
     background: #fafafa;
 }
 
 .accordion-item.active .accordion-content {
-    padding: 1rem;
+    padding: 1rem 1.2rem;
     max-height: 200px;
 }
 
@@ -204,12 +242,12 @@ footer {
     background-color: var(--dark-bg);
     color: #ccc;
     text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
+    padding: 2.5rem 1rem;
+    margin-top: 4rem;
 }
 
 footer .disclaimer {
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     font-size: 0.85rem;
     color: #aaa;
     max-width: 700px;
@@ -217,5 +255,5 @@ footer .disclaimer {
     margin-right: auto;
     font-style: italic;
     border-top: 1px solid #444;
-    padding-top: 1rem;
+    padding-top: 1.2rem;
 }
