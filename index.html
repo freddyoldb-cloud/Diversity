@@ -36,10 +36,10 @@
 
     <!-- TAB NAVIGATION -->
     <nav class="tab-nav">
-        <button class="tab-btn active" data-tab="tab1">LGBTQ+ & Pride Flags</button>
-        <button class="tab-btn" data-tab="tab2">Gender Identity</button>
-        <button class="tab-btn" data-tab="tab3">Skin Color, Racism & Apartheid</button>
-        <button class="tab-btn" data-tab="tab4">Gender-Inclusive Language & State Bans</button>
+        <button class="tab-btn active" onclick="openTab(event, 'tab1')">LGBTQ+ & Pride Flags</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab2')">Gender Identity</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab3')">Skin Color, Racism & Apartheid</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab4')">Gender-Inclusive Language & State Bans</button>
     </nav>
 
     <main class="container">
@@ -192,6 +192,21 @@
         <p class="disclaimer">I decided to build this educational website myself because the federal government and Friedrich Merz failed to properly fund and support the Federal Agency for Civic Education (bpb).</p>
     </footer>
 
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
