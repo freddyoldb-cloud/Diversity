@@ -1,203 +1,269 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduDiversity - Diversity & Human Rights Education</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'bg,cs,da,de,el,en,es,et,fi,fr,ga,hr,hu,it,lt,lv,mt,nl,pl,pt,ro,sk,sl,sv,uk,sq,bs,mk,sr',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head>
-<body>
+:root {
+    --primary-color: #4a90e2;
+    --primary-dark: #357abd;
+    --dark-bg: #1e1e24;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --light-bg: #f4f6f8;
+    --border-radius: 8px;
+}
 
-    <header>
-        <div class="logo">EduDiversity</div>
-        <div class="language-selector">
-            <span>Language:</span>
-            <div id="google_translate_element"></div>
-        </div>
-    </header>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <section class="hero">
-        <h1>Empowering Through Knowledge</h1>
-        <p>An educational platform on LGBTQ+ pride flags, gender identity, skin tone diversity, anti-racism, and language rights.</p>
-    </section>
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
 
-    <!-- TAB SYSTEM CONTAINER -->
-    <div class="tab-system">
-        <input type="radio" name="tabs" id="tab1" checked>
-        <input type="radio" name="tabs" id="tab2">
-        <input type="radio" name="tabs" id="tab3">
-        <input type="radio" name="tabs" id="tab4">
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        <nav class="tab-nav">
-            <label for="tab1" class="tab-btn">LGBTQ+ & Pride Flags</label>
-            <label for="tab2" class="tab-btn">Gender Identity</label>
-            <label for="tab3" class="tab-btn">Skin Color, Racism & Apartheid</label>
-            <label for="tab4" class="tab-btn">Gender-Inclusive Language & State Bans</label>
-        </nav>
+header .logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
 
-        <main class="container">
-            <!-- TAB 1: LGBTQ+ & PRIDE FLAGS -->
-            <section class="tab-content content-1">
-                <p class="section-intro">Pride flags are powerful symbols of community, identity, and ongoing struggles for equal human rights worldwide.</p>
-                <div class="grid">
-                    <div class="card">
-                        <div class="flag-preview progress-flag"></div>
-                        <h3>Progress Pride Flag</h3>
-                        <p>Designed by Daniel Quasar in 2018, this flag incorporates five arrow-shaped stripes to place greater emphasis on inclusion and progress. The brown and black stripes represent marginalized LGBTQ+ people of color, community members lost to HIV/AIDS, and the stigma surrounding it. The light blue, pink, and white stripes represent the Transgender Pride Flag.</p>
-                    </div>
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
 
-                    <div class="card">
-                        <div class="flag-preview nb-flag"></div>
-                        <h3>Non-Binary Flag</h3>
-                        <p>Created by Kye Rowan in 2014 for non-binary individuals who do not feel the genderqueer flag represents them. Yellow represents people whose gender exists outside the binary; white represents people with many or all genders; purple represents those whose gender is a fluid mix of male and female; black represents agender or genderless individuals.</p>
-                    </div>
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
 
-                    <div class="card">
-                        <div class="flag-preview trans-flag"></div>
-                        <h3>Transgender Flag</h3>
-                        <p>Designed by Monica Helms in 1999, an open transgender woman. Light blue represents the traditional color for baby boys, pink for baby girls, and white in the center represents those who are transitioning, intersex, or possess a neutral/undefined gender. Helms noted that no matter which way you fly it, it is always correct.</p>
-                    </div>
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
 
-                    <div class="card">
-                        <div class="flag-preview bi-flag"></div>
-                        <h3>Bisexual Flag</h3>
-                        <p>Designed by Michael Page in 1998 to give the bisexual community its own symbol, comparable to the rainbow flag. The top magenta stripe represents attraction to the same gender; the bottom deep blue stripe represents attraction to different genders; the blended purple stripe in the middle represents attraction across the gender spectrum.</p>
-                    </div>
-                </div>
-            </section>
+.hero p {
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
 
-            <!-- TAB 2: GENDER IDENTITY -->
-            <section class="tab-content content-2">
-                <p class="section-intro">Gender identity is a fundamental aspect of human self-determination, distinct from biological sex characteristics or sexual orientation.</p>
-                <div class="grid">
-                    <div class="card">
-                        <h3>Understanding Gender Identity</h3>
-                        <p>Gender identity refers to each person's deeply felt internal and individual experience of gender, which may or may not correspond with the sex assigned to them at birth. It encompasses personal perception of the body and other expressions including dress, speech, and mannerisms.</p>
-                    </div>
+/* --- Pure CSS Tab Control System --- */
+.tab-system > input[type="radio"] {
+    display: none !important;
+}
 
-                    <div class="card">
-                        <h3>Cisgender & Transgender</h3>
-                        <p><strong>Cisgender:</strong> Individuals whose gender identity aligns with the sex assigned to them at birth.<br><strong>Transgender:</strong> An umbrella term for people whose gender identity or expression differs from societal expectations associated with the sex assigned at birth.</p>
-                    </div>
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem 0;
+    flex-wrap: wrap;
+}
 
-                    <div class="card">
-                        <h3>Non-Binary & Agender</h3>
-                        <p><strong>Non-Binary:</strong> Terms used to describe identities that fall outside the traditional gender binary of strictly male or female.<br><strong>Agender:</strong> Identifying as having no gender or being gender-neutral.</p>
-                    </div>
+.tab-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    user-select: none;
+}
 
-                    <div class="card">
-                        <h3>Pronouns & Respect</h3>
-                        <p>Using correct pronouns (such as he/him, she/her, they/them, or neopronouns) is a basic form of human respect and validation of an individual's identity. Misgendering can cause severe social dysphoria and psychological stress.</p>
-                    </div>
-                </div>
-            </section>
+.tab-btn:hover {
+    color: var(--primary-color);
+}
 
-            <!-- TAB 3: SKIN COLOR, RACISM & APARTHEID -->
-            <section class="tab-content content-3">
-                <p class="section-intro">Understanding structural racism, historical segregation, and skin tone representation is essential for building an equitable society.</p>
-                <div class="grid">
-                    <div class="card full-width">
-                        <h3>Apartheid: A Political Euphemism for Systemic Racism</h3>
-                        <p>
-                            The term <strong>Apartheid</strong> originates from Afrikaans and literally translates to <em>"apart-ness"</em> or <em>"separateness"</em>. 
-                            In reality, "Apartheid" was a policy-driven <strong>euphemism designed to sanitize institutionalized racism and racial segregation</strong>.
-                        </p>
-                        <p>
-                            By framing oppressive laws as mere "separate development" or administrative management, the ruling white minority regime in South Africa attempted to normalize racial oppression, mass displacement, disenfranchisement, and state violence against Black and Brown communities. Calling it "apartness" served as a linguistic cloak to hide state-sponsored racism and white supremacy under the guise of order and division.
-                        </p>
-                    </div>
+/* Active Tab Button Highlighting */
+#tab1:checked ~ .tab-nav label[for="tab1"],
+#tab2:checked ~ .tab-nav label[for="tab2"],
+#tab3:checked ~ .tab-nav label[for="tab3"],
+#tab4:checked ~ .tab-nav label[for="tab4"] {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
 
-                    <div class="card">
-                        <h3>Human Rights & Anti-Racism</h3>
-                        <p>Article 1 of the Universal Declaration of Human Rights states that all human beings are born free and equal in dignity and rights. Anti-racism requires active practices and institutional reforms to challenge systemic oppression based on skin tone or ethnicity.</p>
-                    </div>
+/* Hide all tab contents by default */
+.tab-content {
+    display: none !important;
+}
 
-                    <div class="card">
-                        <h3>Biological Human Spectrum</h3>
-                        <p>Skin melanin concentration evolved across geography purely as protection against ultraviolet radiation. Science confirms that biological race does not exist in human genetics; racial categorizations were artificially created during colonial periods to justify slavery and exploitation.</p>
-                    </div>
+/* Show content corresponding to checked tab */
+#tab1:checked ~ .container .content-1,
+#tab2:checked ~ .container .content-2,
+#tab3:checked ~ .container .content-3,
+#tab4:checked ~ .container .content-4 {
+    display: block !important;
+    animation: fadeIn 0.4s ease;
+}
 
-                    <div class="card">
-                        <h3>Colorism</h3>
-                        <p>Prejudice or discrimination against individuals with darker skin tones, often occurring both between different racial groups and within the same community. Unlearning colorism is essential for true solidarity.</p>
-                    </div>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-                    <div class="card">
-                        <h3>Systemic vs. Individual Racism</h3>
-                        <p>While individual racism manifests through interpersonal prejudice and slurs, systemic (or institutional) racism refers to policies and practices embedded in housing, criminal justice, employment, and education that produce inequitable outcomes across racial groups.</p>
-                    </div>
+/* --- Main Layout & Card Styling --- */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    min-height: 50vh;
+}
 
-                    <div class="card">
-                        <h3>Intersectionality</h3>
-                        <p>Coined by legal scholar Kimberlé Crenshaw, intersectionality explains how different forms of oppression (racism, sexism, homophobia, transphobia, classism) intersect and amplify each other, creating unique lived experiences of discrimination.</p>
-                    </div>
-                </div>
-            </section>
+.section-intro {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1.05rem;
+}
 
-            <!-- TAB 4: GENDER-INCLUSIVE LANGUAGE & STATE BANS -->
-            <section class="tab-content content-4">
-                <p class="section-intro">An overview of global and regional developments regarding gender-inclusive language, official policies, and legal restrictions.</p>
-                <div class="grid">
-                    <div class="card full-width danger-highlight">
-                        <h3>Banning Gender-Inclusive Language: State Discrimination & Human Rights Violations</h3>
-                        <p>
-                            In regions like Bavaria (Bavarian Gender Ban), state authorities enforced official bans prohibiting schools, universities, and public authorities from using gender-sensitive punctuation (such as the gender star, colon, or internal 'I').
-                        </p>
-                        <p>
-                            Politically enforcing language bans is a form of <strong>institutionalized discrimination</strong> and a violation of personal freedom. 
-                            The right to express one's identity and refer to all gender identities respectfully is protected under the <strong>General Right of Personality (Allgemeines Persönlichkeitsrecht)</strong>, a core pillar of human rights and constitutional freedom.
-                        </p>
-                        <p>
-                            By outlawing inclusive language, state governments actively erase women, non-binary, and transgender people from official visibility. Banning language under the guise of "linguistic purity" restricts freedom of expression and weaponizes state power to marginalize vulnerable identity groups.
-                        </p>
-                    </div>
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
 
-                    <div class="card">
-                        <h3>Gender-Inclusive Language</h3>
-                        <p>Gender-inclusive language aims to avoid bias, slang, or discriminatory assumptions toward particular sexes or genders. In German, methods like the asterisk (Gendersternchen), colon, or gender-neutral phrasing (e.g., "Studierende" instead of "Studenten") are used to explicitly include all gender identities.</p>
-                    </div>
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
 
-                    <div class="card">
-                        <h3>Personality Rights & Self-Determination</h3>
-                        <p>How an individual speaks, self-identifies, and acknowledges others is intimately linked to personal dignity. State control over how people address each other threatens basic democratic values and individual self-determination.</p>
-                    </div>
+.card.full-width {
+    grid-column: 1 / -1;
+    background: #fdf6e3;
+    border-left: 5px solid #d33682;
+}
 
-                    <div class="card full-width media-card">
-                        <h3>Positive Example: Tagesschau Media Reporting</h3>
-                        <p>While political bans attempt to restrict inclusive language, independent public media outlets demonstrate how responsible journalism works. In their reporting on the Bavarian gender ban, <strong>Tagesschau</strong> correctly uses gender-inclusive phrasing like <em>"Schüler:innen"</em>.</p>
-                        <p>By continuing to use inclusive language even when reporting on political bans, independent news platforms uphold linguistic visibility, equal treatment, and respect for all gender identities.</p>
-                        <p><a href="https://www.instagram.com/p/C4uyBFxoq4d/" target="_blank" rel="noopener noreferrer" class="social-link">View Tagesschau Instagram Post on the Bavarian Gender Ban &rarr;</a></p>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+.card.full-width.danger-highlight {
+    background: #fff0f0;
+    border-left: 5px solid #e53e3e;
+}
 
-    <footer>
-        <div class="footer-sources">
-            <h4>Trusted Resources & Additional Information:</h4>
-            <ul>
-                <li><a href="https://politicalbeauty.de" target="_blank" rel="noopener noreferrer">Zentrum für Politische Schönheit</a></li>
-                <li><a href="https://www.fes.de/wissen/gender-glossar/diversitaet" target="_blank" rel="noopener noreferrer">Friedrich-Ebert-Stiftung: Gender-Glossar Diversität</a></li>
-                <li><a href="https://www.queer.de/nachrichten.php" target="_blank" rel="noopener noreferrer">Queer.de Nachrichten</a></li>
-            </ul>
-        </div>
-        <p>&copy; 2026 EduDiversity. All rights reserved.</p>
-        <p class="disclaimer">I decided to build this educational website myself because the federal government and Friedrich Merz failed to properly fund and support the Federal Agency for Civic Education (bpb).</p>
-    </footer>
+.card.full-width.media-card {
+    background: #eef6ff;
+    border-left: 5px solid #4a90e2;
+}
 
-</body>
-</html>
+.social-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.card h3 {
+    margin-bottom: 0.6rem;
+    color: #222;
+}
+
+.card p {
+    margin-bottom: 0.8rem;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Flag Previews --- */
+.flag-preview {
+    height: 120px;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.progress-flag {
+    background: linear-gradient(to bottom, #e40303 16.6%, #ff8c00 16.6% 33.2%, #ffed00 33.2% 49.8%, #008026 49.8% 66.4%, #004dff 66.4% 83%, #750787 83%);
+}
+
+.nb-flag {
+    background: linear-gradient(to bottom, #fff433 25%, #ffffff 25% 50%, #9b59d0 50% 75%, #2c2c2c 75%);
+}
+
+.trans-flag {
+    background: linear-gradient(to bottom, #5bcefa 20%, #f5a9b8 20% 40%, #ffffff 40% 60%, #f5a9b8 60% 80%, #5bcefa 80%);
+}
+
+.bi-flag {
+    background: linear-gradient(to bottom, #d60270 40%, #9b4f96 40% 60%, #0038a8 60%);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    margin-top: 4rem;
+}
+
+.footer-sources {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #444;
+}
+
+.footer-sources h4 {
+    color: #fff;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.footer-sources ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.footer-sources a {
+    color: #64b5f6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-sources a:hover {
+    text-decoration: underline;
+}
+
+footer .disclaimer {
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    color: #aaa;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+    border-top: 1px solid #444;
+    padding-top: 1.2rem;
+}
