@@ -66,7 +66,11 @@ header .logo {
     opacity: 0.95;
 }
 
-/* Tab Navigation Bar */
+/* --- Pure CSS Tab Control System --- */
+.tab-system input[type="radio"] {
+    display: none;
+}
+
 .tab-nav {
     display: flex;
     justify-content: center;
@@ -78,8 +82,6 @@ header .logo {
 }
 
 .tab-btn {
-    background: none;
-    border: none;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     font-weight: 600;
@@ -87,15 +89,38 @@ header .logo {
     cursor: pointer;
     border-bottom: 3px solid transparent;
     transition: all 0.3s ease;
+    user-select: none;
 }
 
 .tab-btn:hover {
     color: var(--primary-color);
 }
 
-.tab-btn.active {
+/* Highlight Active Tab Button via CSS */
+#tab1:checked ~ .tab-nav label[for="tab1"],
+#tab2:checked ~ .tab-nav label[for="tab2"],
+#tab3:checked ~ .tab-nav label[for="tab3"],
+#tab4:checked ~ .tab-nav label[for="tab4"] {
     color: var(--primary-color);
     border-bottom: 3px solid var(--primary-color);
+}
+
+/* Hide / Show Tab Content via CSS */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+#tab1:checked ~ .container .content-1,
+#tab2:checked ~ .container .content-2,
+#tab3:checked ~ .container .content-3,
+#tab4:checked ~ .container .content-4 {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .container {
@@ -103,21 +128,6 @@ header .logo {
     margin: 2rem auto;
     padding: 0 1rem;
     min-height: 50vh;
-}
-
-/* Tab Content Visibility */
-.tab-content {
-    display: none;
-    animation: fadeIn 0.4s ease;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 .section-intro {
@@ -185,56 +195,6 @@ header .logo {
 
 .bi-flag {
     background: linear-gradient(to bottom, #d60270 40%, #9b4f96 40% 60%, #0038a8 60%);
-}
-
-/* Accordion */
-.accordion {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.accordion-item {
-    background: white;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.accordion-header {
-    width: 100%;
-    text-align: left;
-    padding: 1rem 1.2rem;
-    background: none;
-    border: none;
-    font-size: 1.05rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.accordion-header::after {
-    content: '+';
-    font-size: 1.3rem;
-}
-
-.accordion-item.active .accordion-header::after {
-    content: '-';
-}
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    padding: 0 1.2rem;
-    background: #fafafa;
-}
-
-.accordion-item.active .accordion-content {
-    padding: 1rem 1.2rem;
-    max-height: 200px;
 }
 
 /* Footer */
